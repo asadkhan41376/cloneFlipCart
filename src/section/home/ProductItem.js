@@ -14,7 +14,7 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 import { useMediaQuery } from "usehooks-ts";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
-import Grid2, {Grid}from "@mui/material/Grid2"
+import Grid2, { Grid } from "@mui/material/Grid2"
 
 
 const ProductsItems = () => {
@@ -76,25 +76,25 @@ const ProductsItems = () => {
                                 {data.map((e, index) => (
                                     <SwiperSlide key={index}>
                                         <Stack direction="row" gap={3}>
-                                       <Box>
-                                       <Image
-                                        width={200}
-                                        height={100}
-                                        src={e.image}
-                                        />
-                                        <Box height={50}>
-                                        <Typography variant="p">{e.name}</Typography>
-                                        </Box>
-                                        <Typography my={1} variant="p" width="100%" display="inline-block">{e.price}</Typography>
+                                            <Box>
+                                                <Image
+                                                    width={200}
+                                                    height={100}
+                                                    src={e.image}
+                                                />
+                                                <Box height={50}>
+                                                    <Typography variant="p">{e.name}</Typography>
+                                                </Box>
+                                                <Typography my={1} variant="p" width="100%" display="inline-block">{e.price}</Typography>
 
-                                       <div onClick={notify}>
-                                       <Button size="small"  color="secondary"variant="contained" onClick={()=>handelAdd(e)}>
+                                                <div onClick={notify} >
+                                                    <Button size="small" color="secondary" variant="contained" onClick={() => handelAdd(e)}>
                                                         add to cart
                                                     </Button>
-                                       </div>
-                                       </Box>
+                                                </div>
+                                            </Box>
 
-                                        
+
                                         </Stack>
                                     </SwiperSlide>
                                 ))}
@@ -107,19 +107,19 @@ const ProductsItems = () => {
                                     <Image key={i} width={500} height={0} src={e.image} alt="image" />
 
                                     <div className="containt mt-5 ">
-                                        <h1 className="h-[100px] mt-4 text-[20px]">{e.name}</h1>
+                                        <h1 className="h-[100px] my-4 text-[20px]">{e.name}</h1>
                                         <span className="text-[20px] text-red-300">
 
                                             from ${e.price}
                                         </span>
-                                        <div onClick={notify}>
-                                            <Button
+                                        <Box onClick={notify} my={3}>
+                                            <Button fullWidth
                                                 variant="outlined" color="secondary"
                                                 onClick={() => handelAdd(e)}
                                             >
                                                 add
                                             </Button>
-                                        </div>
+                                        </Box>
                                     </div>
                                 </div>
                             ))}
