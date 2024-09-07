@@ -35,11 +35,14 @@ const Navbar = () => {
     <>
       <Box sx={{ backgroundColor: "white" }} p={{ lg: 2, md: 2, sm: 0 }}>
         {matchs ? (
+                    // for MObile  
+
           <Stack
             flexDirection="row"
             alignItems="center"
             justifyContent="space-between"
           >
+            <Link href="/">
             <Image
               src="/Layout/header/logoFlipCart.svg"
               width="150"
@@ -47,19 +50,27 @@ const Navbar = () => {
               alt="logo"
               priority
             />
+            </Link>
+            
             <Stack
               flexDirection="row"
-              gap={5}
+              gap={2}
               width="100%"
               justifyContent="end"
               alignItems="center"
             >
               <Button
-                startIcon={<Avatar sizes="small" />}
-                sx={{ color: "black", width: "20px" }}
-              >
-                {Profile?.username ? Profile?.username : "user"}
-              </Button>
+                  startIcon={<Avatar src={Profile?.image} sizes="small" />}
+                  sx={{ color: "black" }}
+                >
+                  {Profile?.username ? (
+                    Profile?.username
+                  ) : (
+                    <Button size="small">
+                      <AuthDialog />
+                    </Button>
+                  )}
+                </Button>
               <Stack flexDirection="row" alignItems="center">
                 <ShoppingCartIcon />
                 <MobileDrowor />
@@ -67,20 +78,24 @@ const Navbar = () => {
             </Stack>
           </Stack>
         ) : (
+
+          // for desktop 
           <Grid container textAlign="center" spacing={5}>
             <Grid size={{ lg: 3, md: 3 }}>
-              <Image
+             <Link href="/">
+             <Image
                 src="/Layout/header/logoFlipCart.svg"
-                width="150"
+                width="200"
                 height="150"
                 alt="logo"
                 priority
               />
+             </Link>
             </Grid>
-            <Grid size={{ lg: 4, md: 6 }}>
+            <Grid size={{ lg: 3, md: 6 }}>
               <TextField fullWidth variant="standard" size="small" />
             </Grid>
-            <Grid size={{ lg: 5, md: 6 }} display="flex" alignItems="center">
+            <Grid size={{ lg: 6, md: 6 }} display="flex" alignItems="center">
               <Stack direction="row" gap={3}>
                 <Button
                   startIcon={<Avatar src={Profile?.image} sizes="small" />}
