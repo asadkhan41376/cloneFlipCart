@@ -6,7 +6,7 @@ import { Box, Container } from '@mui/material'
 const ProductList = () => {
   return (
     <Container maxWidth >
- <Box my={2} display="flex"  alignItems="center" justifyContent="center" gap={8} bgcolor="white">
+ <Box my={2} display="flex" flexWrap="wrap"  alignItems="center" justifyContent="center" gap={8} bgcolor="white">
    {
             [...Array(9)].map((_,i)=>(
                 <div className='w-[70px]' key={i} >

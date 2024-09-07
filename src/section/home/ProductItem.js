@@ -87,9 +87,11 @@ const ProductsItems = () => {
                                         </Box>
                                         <Typography my={1} variant="p" width="100%" display="inline-block">{e.price}</Typography>
 
+                                       <div onClick={notify}>
                                        <Button size="small"  color="secondary"variant="contained" onClick={()=>handelAdd(e)}>
                                                         add to cart
                                                     </Button>
+                                       </div>
                                        </Box>
 
                                         
