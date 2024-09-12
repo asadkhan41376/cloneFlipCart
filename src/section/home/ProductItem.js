@@ -81,6 +81,7 @@ const ProductsItems = () => {
                                                     width={200}
                                                     height={100}
                                                     src={e.image}
+                                                    alt="product Item"
                                                 />
                                                 <Box height={50}>
                                                     <Typography variant="p">{e.name}</Typography>

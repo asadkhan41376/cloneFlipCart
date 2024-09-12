@@ -19,6 +19,7 @@ const Benner = () => {
                             height={0}
                             src="/Layout/benner/78e89d02375d5222.webp"
                             alt='banner'
+                            priority
                         /></SwiperSlide>
                     ))
                 }

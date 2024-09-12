@@ -6,6 +6,7 @@ import {
   Button,
   Avatar,
   useMediaQuery,
+  Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Image from "next/image";
@@ -19,6 +20,8 @@ import { getProfileData } from "@/redux/feachers/profile";
 import MobileDrowor from "./MobilDrwor/MobileDrowor";
 import AuthDialog from "./AuthDialog/Dialog";
 import Link from "next/link";
+import LogOutMenu from "./logOut/LogutMenu";
+import BasicMenu from "./logOut/LogutMenu";
 
 const Navbar = () => {
   const matchs = useMediaQuery("(max-width:768px)");
@@ -59,18 +62,14 @@ const Navbar = () => {
               justifyContent="end"
               alignItems="center"
             >
-              <Button
-                  startIcon={<Avatar src={Profile?.image} sizes="small" />}
-                  sx={{ color: "black" }}
-                >
-                  {Profile?.username ? (
-                    Profile?.username
-                  ) : (
-                    <Button size="small">
-                      <AuthDialog />
-                    </Button>
-                  )}
-                </Button>
+               <Stack direction="row" p={2} alignItems="center" gap={2}>
+    
+    <Avatar src={Profile?.image}/>
+
+   { Profile?.username ? <BasicMenu username={Profile?.username}/>:<AuthDialog />}
+    
+    </Stack>
+  
               <Stack flexDirection="row" alignItems="center">
                 <ShoppingCartIcon />
                 <MobileDrowor />
@@ -97,19 +96,22 @@ const Navbar = () => {
             </Grid>
             <Grid size={{ lg: 6, md: 6 }} display="flex" alignItems="center">
               <Stack direction="row" gap={3}>
-                <Button
-                  startIcon={<Avatar src={Profile?.image} sizes="small" />}
-                  sx={{ color: "black" }}
-                >
-                  {Profile?.username ? (
-                    Profile?.username
-                  ) : (
-                    <Button size="small">
-                      <AuthDialog />
-                    </Button>
-                  )}
-                </Button>
-                
+               
+
+
+  <Stack direction="row" alignItems="center" gap={2}>
+    
+    <Avatar src={Profile?.image}/>
+
+   { Profile?.username ? <BasicMenu username={Profile?.username}/>:<AuthDialog />}
+    
+    </Stack>
+  
+  
+
+
+
+              
                 <Button
                   startIcon={ <Link href="/cart"><ShoppingCartIcon /></Link>}
                   sx={{ color: "black" }}

@@ -27,10 +27,18 @@ const dispatch = useDispatch()
   return (
   <>
     <form onSubmit={handleSubmit(onsubmit)}>
-
+      <Box>
+      <Typography>user : emilys</Typography>
+      <Typography>password : emilyspass</Typography>
+      <Typography>just becouse this is dummy user api </Typography>
+      </Box>
+    
 <Typography variant='h4' textAlign="center" my={2}> Login </Typography>
+
 <Grid container spacing={2}>
+
   <Grid item lg={12} md={12} sm={12} >
+
 
     <Controller
       name='username'
