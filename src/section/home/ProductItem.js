@@ -74,8 +74,8 @@ const ProductsItems = () => {
 
                             >
                                 {data.map((e, index) => (
-                                    <SwiperSlide key={index}>
-                                        <Stack direction="row" gap={3}>
+                                    <SwiperSlide >
+                                        <Stack key={index} direction="row" gap={3}>
                                             <Box>
                                                 <Image
                                                     width={200}

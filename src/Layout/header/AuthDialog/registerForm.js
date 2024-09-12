@@ -40,7 +40,7 @@ const RegisterForm = ({setStep}) => {
 
         />
       )}
- /   >
+ />
 
  
 
@@ -61,7 +61,7 @@ const RegisterForm = ({setStep}) => {
 
     />
   )}
-/   >
+/>
 
 
 
