@@ -92,7 +92,7 @@ const RegisterForm = ({setStep}) => {
 
 
   <Grid item lg={12} md={12} sm={12} textAlign="center" >
-  <Typography>already have an account ? <Button  onClick={()=>setStep("login")}>log in</Button> </Typography>
+  <Typography>already have an account ? <Button  onClick={()=>setStep(`login`)}>log in</Button> </Typography>
   </Grid>
 </Grid>
 

@@ -84,7 +84,7 @@ const dispatch = useDispatch()
   </Grid>
 
   <Grid item lg={12} md={12} sm={12} textAlign="center" >
-  <Typography>don't have an account? <Button  onClick={()=>setStep("signup")}>signup</Button> </Typography>
+  <Typography>don't have an account? <Button  onClick={()=>setStep(`signup`)}>signup</Button> </Typography>
   </Grid>
 </Grid>
 </form>
