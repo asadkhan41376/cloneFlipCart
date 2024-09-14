@@ -32,7 +32,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProfileData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
