@@ -73,8 +73,8 @@ const ProductsItems = () => {
 
 
                             >
-                                {data.map((e, index) => (
-                                    <SwiperSlide key={index} >
+                                {data.map((e) => (
+                                    <SwiperSlide key={e.id} >
                                         <Stack  direction="row" gap={3}>
                                             <Box>
                                                 <Image
@@ -103,8 +103,8 @@ const ProductsItems = () => {
                         </div>
                     ) : (
                         <div className="flex-col justify-between align-middle">
-                            {data.map((e, i) => (
-                                <div className="p-5 text-center   w-[100%] border-2 border-slate-300   divide-y divide-slate-700">
+                            {data.map((e) => (
+                                <div key={e.id} className="p-5 text-center   w-[100%] border-2 border-slate-300   divide-y divide-slate-700">
                                     <Image key={i} width={500} height={0} src={e.image} alt="image" />
 
                                     <div className="containt mt-5 ">
