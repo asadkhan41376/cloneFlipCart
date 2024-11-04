@@ -12,9 +12,10 @@ import { useDispatch } from "react-redux";
 import { addtocart } from "@/redux/feachers/cartSlice";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { useMediaQuery } from "usehooks-ts";
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Card, CardContent, CardMedia, Container, Stack, Typography } from "@mui/material";
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import Grid2, { Grid } from "@mui/material/Grid2"
+import MyImage from "@/components/Image";
 
 
 const ProductsItems = () => {
@@ -23,7 +24,7 @@ const ProductsItems = () => {
     const matches = useMediaQuery("(min-width:768px)");
 
     const getData = async () => {
-        const res = await fetch("https://freetestapi.com/api/v1/products");
+        const res = await fetch("https://fakestoreapi.com/products");
         const data = await res.json();
 
         setData(data);
@@ -75,25 +76,31 @@ const ProductsItems = () => {
                             >
                                 {data.map((e) => (
                                     <SwiperSlide key={e.id} >
-                                        <Stack  direction="row" gap={3}>
-                                            <Box>
-                                                <Image
-                                                    width={200}
-                                                    height={100}
-                                                    src={e.image}
-                                                    alt="product Item"
-                                                />
-                                                <Box height={50}>
-                                                    <Typography variant="p">{e.name}</Typography>
-                                                </Box>
-                                                <Typography my={1} variant="p" width="100%" display="inline-block">{e.price}</Typography>
+                                        <Stack direction="row" gap={3}>
+                                            <Card >
 
-                                                <div onClick={notify} >
-                                                    <Button size="small" color="secondary" variant="contained" onClick={() => handelAdd(e)}>
-                                                        add to cart
+                                                <Box display="flex" justifyContent="center">
+                                                    <MyImage
+
+                                                        src={e.image}
+                                                        height="100px"
+                                                        width="100px"
+                                                        alt="ha"
+
+                                                    />
+                                                </Box>
+                                                <CardContent sx={{ textAlign: "center", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                                                    <Typography>{e.title}...</Typography>
+                                                    <Typography>{e.price}₹</Typography>
+                                                    <Button fullWidth
+                                                        variant="outlined" color="secondary"
+                                                        onClick={() => handelAdd(e)}
+                                                    >
+                                                        add
                                                     </Button>
-                                                </div>
-                                            </Box>
+                                                </CardContent>
+
+                                            </Card>
 
 
                                         </Stack>
@@ -104,24 +111,31 @@ const ProductsItems = () => {
                     ) : (
                         <div className="flex-col justify-between align-middle">
                             {data.map((e) => (
-                                <div key={e.id} className="p-5 text-center   w-[100%] border-2 border-slate-300   divide-y divide-slate-700">
-                                    <Image key={i} width={500} height={0} src={e.image} alt="image" />
+                                <div key={e.id} className="p-3 text-center   w-[100%] border-2 border-slate-300   divide-y divide-slate-700">
+                                    <Card >
 
-                                    <div className="containt mt-5 ">
-                                        <h1 className="h-[100px] my-4 text-[20px]">{e.name}</h1>
-                                        <span className="text-[20px] text-red-300">
+                                        <Box display="flex" justifyContent="center">
+                                            <MyImage
 
-                                            from ${e.price}
-                                        </span>
-                                        <Box onClick={notify} my={3}>
+                                                src={e.image}
+                                                height="100px"
+                                                width="100px"
+                                                alt="ha"
+
+                                            />
+                                        </Box>
+                                        <CardContent sx={{ textAlign: "center", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                                            <Typography>{e.title}...</Typography>
+                                            <Typography>{e.price}₹</Typography>
                                             <Button fullWidth
                                                 variant="outlined" color="secondary"
                                                 onClick={() => handelAdd(e)}
                                             >
                                                 add
                                             </Button>
-                                        </Box>
-                                    </div>
+                                        </CardContent>
+
+                                    </Card>
                                 </div>
                             ))}
                         </div>
