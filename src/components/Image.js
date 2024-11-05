@@ -1,3 +1,4 @@
+import { Scale } from '@mui/icons-material';
 import { Box } from '@mui/material'
 import React from 'react'
 
@@ -9,6 +10,10 @@ const MyImage = ({sx,src,height,width,alt}) => {
     height={height}
     width={width}
     alt={alt}
+    sx={{"&:hover": {
+            scale: "1.1", // Change background color on hover
+            transition:"all .5s"
+        }}}
     
     >
       
