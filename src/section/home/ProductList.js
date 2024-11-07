@@ -51,7 +51,7 @@ const ProductList = () => {
 <Box my={2} p={3} sx={{overflowX:"scroll",display:"flex",alignItems:"center",justifyContent:"start",gap:"50px"}} bgcolor="white">
 {
   productList.map((e,i)=>(
-<Stack>
+<Stack key={i}>
 <MyImage
     src={e.item}
     width="70px"
