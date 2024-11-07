@@ -10,10 +10,10 @@ const MyImage = ({sx,src,height,width,alt}) => {
     height={height}
     width={width}
     alt={alt}
-    sx={{"&:hover": {
-            scale: "1.1", // Change background color on hover
-            transition:"all .5s"
-        }}}
+    // sx={{"&:hover": {
+    //         scale: "1.1", // Change background color on hover
+    //         transition:"all .5s"
+    //     }}}
     
     >
       

@@ -44,6 +44,7 @@ const ProductsItems = () => {
   const dispatch = useDispatch();
   const handelAdd = (e) => {
     dispatch(addtocart(e));
+    notify();
   };
 
   const notify = () =>
@@ -87,12 +88,15 @@ const ProductsItems = () => {
                   <Stack direction="row">
                     <Card variant="outlined" sx={{ padding: " 30px" }}>
                       <Box display="flex" justifyContent="center">
-                        <MyImage
+                       <Link href={`/product/${e.id}`}>
+                       
+                       <MyImage
                           src={e.image}
                           height="120px"
                           width="120px"
                           alt="ha"
                         />
+                       </Link>
                       </Box>
                       <CardContent sx={{ textAlign: "center" }}>
                         <Typography>{e.title.split(" ")[0]}</Typography>

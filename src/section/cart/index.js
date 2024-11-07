@@ -4,7 +4,11 @@ import ShoppingCart from './ShoppingCart'
 import { Grid } from '@mui/system'
 import { Box, Divider, Stack, Typography } from '@mui/material'
 
+
 const CartSection = () => {
+
+
+
   return (
     <>
       <Grid container spacing={2}>
@@ -14,7 +18,7 @@ const CartSection = () => {
         </Grid>
         <Grid item size={{ lg: 4, md: 4, sm: 12, xs: 12 }}>
           <Box bgcolor="white" my={2} p={2}>
-            <Typography variant='p' sx={{fontSize:"20px"}}>Price details</Typography>
+            <Typography variant='p' sx={{ fontSize: "20px" }}>Price details</Typography>
 
             <Stack direction="row" justifyContent="space-between" alignItems="center" mt={2}>
               <Typography variant='p'>Price (1 item)</Typography>
@@ -40,11 +44,11 @@ const CartSection = () => {
             </Stack>
 
             <Stack direction="row" justifyContent="space-between" alignItems="center" mt={3} py={2}>
-              <Typography variant='p' sx={{fontWeight:"bold"}}>Total Amount</Typography>
-              <Typography variant='p' sx={{fontWeight:"bold"}}>₹1,702</Typography>
+              <Typography variant='p' sx={{ fontWeight: "bold" }}>Total Amount</Typography>
+              <Typography variant='p' sx={{ fontWeight: "bold" }}>₹1,702</Typography>
 
             </Stack>
-<Divider/>
+            <Divider />
           </Box>
 
         </Grid>

@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 
 const MensCloth = () => {
     const [mens, SetMens] = useState([])
-    const [Category, SetCategory] = useState("men's clothing")
+    const [Category, SetCategory] = useState("women's clothing")
 
 
 
