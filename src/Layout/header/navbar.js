@@ -101,7 +101,7 @@ const Navbar = () => {
             <Grid size={{ lg: 3, md: 6 }}>
               <TextField fullWidth variant="standard" size="small" />
             </Grid>
-            <Grid size={{ lg: 6, md: 6 }} display="flex" alignItems="center">
+            <Grid size={{ lg: 6, md: 6 }} display="flex" alignItems="center" justifyContent="center">
               <Stack direction="row" gap={3}>
 
 
