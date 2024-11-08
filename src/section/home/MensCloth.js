@@ -1,21 +1,23 @@
 
 "use client"
 import MyImage from '@/components/Image'
+import { addtocart } from '@/redux/feachers/cartSlice'
 import { Box, Button, Card, CardContent, Container, FormControl, InputLabel, MenuItem, Select, Stack, TextField, Typography } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 const MensCloth = () => {
     const [mens, SetMens] = useState([])
-    const [Category, SetCategory] = useState("women's clothing")
-
+    const [Category, SetCategory] = useState("fragrances")
+const dispatch = useDispatch()
 
 
     const MensData = async () => {
         try {
-            const response = await axios.get("https://fakestoreapi.com/products")
+            const response = await axios.get("https://dummyjson.com/products")
 
-            const mensCategory = response?.data.filter((product) => product?.category === Category)
+            const mensCategory = response?.data?.products.filter((product) => product?.category === Category)
             SetMens(mensCategory)
             console.log("ddfdsfsdfds", mens);
         } catch (error) {
@@ -25,6 +27,11 @@ const MensCloth = () => {
 
 
     }
+
+   const handelAdd = (e)=>{
+    dispatch(addtocart(e))
+}
+
     useEffect(() => {
         MensData();
     }, [Category])
@@ -51,10 +58,10 @@ const MensCloth = () => {
                             label="Age"
                         >
 
-                            <MenuItem value={"men's clothing"}>Men's Clothing</MenuItem>
-                            <MenuItem value={"electronics"}>Electronics</MenuItem>
-                            <MenuItem value={"jewelery"}>Jewelery</MenuItem>
-                            <MenuItem value={"women's clothing"}>Women's Clothing</MenuItem>
+                            <MenuItem value={"beauty"}>Beauty</MenuItem>
+                            <MenuItem value={"fragrances"}>Fragrances</MenuItem>
+                            <MenuItem value={"furniture"}>Furniture</MenuItem>
+                            <MenuItem value={"groceries"}>Groceries</MenuItem>
                         </Select>
                     </FormControl>
                 </Stack>
@@ -72,7 +79,7 @@ const MensCloth = () => {
                                 <Box display="flex" justifyContent="center">
                                     <MyImage
 
-                                        src={categoryProduct.image}
+                                        src={categoryProduct.images[0]}
                                         height="120px"
                                         width="120px"
                                         alt="ha"

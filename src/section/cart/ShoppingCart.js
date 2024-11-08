@@ -32,12 +32,12 @@ const ShoppingCart = () => {
         </Stack>
 
         <Box bgcolor="white">
-          {items.map((e, index) => (
+          {items.map((e,index) => (
             <>
-              <Grid container alignItems="center">
+              <Grid key={index} container alignItems="center">
                 <Grid items size={{ lg: 8, md: 8, sm: 12, sx: 12 }} p={4}>
 
-                  <Image width={150} height={150} src={e.image} alt="image not found" />
+                  <Image width={150} height={150} src={e.images[0]} alt="image not found" />
 
                   <Box my={2} maxWidth> 
                     <h1>{e.name}</h1>

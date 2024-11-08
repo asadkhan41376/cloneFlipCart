@@ -32,10 +32,12 @@ const ProductsItems = () => {
   const matches = useMediaQuery("(min-width:768px)");
 
   const getData = async () => {
-    const res = await fetch("https://fakestoreapi.com/products");
+    const res = await fetch("https://dummyjson.com/products");
     const data = await res.json();
+    console.log(data?.products,"dlkal");
+    
 
-    setData(data);
+    setData(data?.products);
   };
   useEffect(() => {
     getData();
@@ -73,7 +75,7 @@ const ProductsItems = () => {
           py={3}
           px={5}
         >
-          <Typography variant="h5"> Best of Electronics </Typography>
+          <Typography variant="h5">Find Your Luxe Lifestyle</Typography>
 
           <Link href="#">
             <PlayCircleFilledIcon />
@@ -83,37 +85,39 @@ const ProductsItems = () => {
         {matches ? (
           <div className="flex justify-between align-middle  ">
             <Swiper slidesPerView={5}>
-              {data.map((e, index) => (
+             {
+              data.map((e,index)=>(
                 <SwiperSlide key={index}>
-                  <Stack direction="row">
-                    <Card variant="outlined" sx={{ padding: " 30px" }}>
-                      <Box display="flex" justifyContent="center">
-                       <Link href={`/product/${e.id}`}>
-                       
-                       <MyImage
-                          src={e.image}
-                          height="120px"
-                          width="120px"
-                          alt="ha"
-                        />
-                       </Link>
-                      </Box>
-                      <CardContent sx={{ textAlign: "center" }}>
-                        <Typography>{e.title.split(" ")[0]}</Typography>
-                        <Typography>{e.price}₹</Typography>
-                        <Button
-                          fullWidth
-                          variant="outlined"
-                          color="secondary"
-                          onClick={() => handelAdd(e)}
-                        >
-                          Add To Cart
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </Stack>
-                </SwiperSlide>
-              ))}
+                <Stack direction="row">
+                  <Card variant="outlined" sx={{ padding: " 30px" }}>
+                    <Box display="flex" justifyContent="center">
+                     <Link href={`/product/${e.id}`}>
+                     
+                     <MyImage
+                        src={e.images[0]}
+                        height="120px"
+                        width="120px"
+                        alt="ha"
+                      />
+                     </Link>
+                    </Box>
+                    <CardContent sx={{ textAlign: "center" }}>
+                      <Typography>{e.title.split(" ")[0]}</Typography>
+                      <Typography>{e.price}₹</Typography>
+                      <Button
+                        fullWidth
+                        variant="outlined"
+                        color="secondary"
+                        onClick={() => handelAdd(e)}
+                      >
+                        Add To Cart
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Stack>
+              </SwiperSlide>
+              ))
+             }
             </Swiper>
           </div>
         ) : (
