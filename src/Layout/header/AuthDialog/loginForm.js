@@ -12,10 +12,10 @@ const dispatch = useDispatch()
   const onsubmit=async(data)=>{
     try {
         const response = await axios.post('https://dummyjson.com/user/login',data)
-        // console.log("csdsd",response.data.token);
+        console.log("csdsd",response.data.accessToken);
         
         if(response.status==200){
-            setCookie("token",response?.data?.token)
+            setCookie("token",response?.data?.accessToken)
             dispatch(getProfileData())
         }
     } catch (error) {
