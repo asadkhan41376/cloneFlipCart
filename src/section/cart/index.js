@@ -1,11 +1,14 @@
+"use client"
 import React from 'react'
 // import{Grid} from "@mui/material/Grid2"
 import ShoppingCart from './ShoppingCart'
 import { Grid } from '@mui/system'
 import { Box, Divider, Stack, Typography } from '@mui/material'
+import { useSelector } from 'react-redux'
 
 
 const CartSection = () => {
+  const {items} = useSelector((data)=> data.cart)
 
 
 
@@ -21,7 +24,7 @@ const CartSection = () => {
             <Typography variant='p' sx={{ fontSize: "20px" }}>Price details</Typography>
 
             <Stack direction="row" justifyContent="space-between" alignItems="center" mt={2}>
-              <Typography variant='p'>Price (1 item)</Typography>
+              <Typography variant='p'>Price ({items.length} item)</Typography>
               <Typography variant='p'>₹4,999</Typography>
 
             </Stack>
