@@ -8,6 +8,7 @@ import { removeItem, setItems } from "@/redux/feachers/cartSlice";
 import { useMediaQuery } from "usehooks-ts";
 import { Box, Button, Stack } from "@mui/material";
 import { Grid } from '@mui/system'
+import { loadDataToLocal } from "@/redux/feachers/cartSlice";
 // import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 
 
@@ -20,7 +21,9 @@ const ShoppingCart = () => {
 
 
   const { items } = useSelector((state) => state.cart);
-
+useEffect(()=>{
+dispatch(loadDataToLocal())
+},[dispatch])
 
 
   return (
