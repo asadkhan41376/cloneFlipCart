@@ -121,7 +121,7 @@ const Navbar = () => {
 
                 <Button
                   startIcon={<Link href="/cart">
-                    <Badge badgeContent={items.length} color="secondary">
+                    <Badge badgeContent={items?.length || "0"} color="secondary">
                       <ShoppingCartIcon />
                     </Badge>
                   </Link>}
