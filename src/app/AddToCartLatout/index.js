@@ -16,11 +16,11 @@ const AddTocart = ({ id }) => {
 
 
     const DynamicData = async () => {
-        const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+        const res = await fetch(`https://dummyjson.com/products/${id}`);
         const data = await res.json();
 
         setData(data);
-        // console.log(data);
+        console.log(data,"dbajdvjadvajvd");
 
     };
     useEffect(() => {
@@ -39,9 +39,9 @@ dispatch(addtocart(e))
 
                 <Stack direction="row" gap={2}>
                     <SideGallary />
-                    <Box height={ matches? `400px`:`100%`} width={ matches? `450px`:`100%`}   >
+                    <Box height={ matches? `350px`:`100%`} width={ matches? `450px`:`100%`}   >
                         <MyImage
-                            src={data.image}
+                            src={data?.images}
                             height="100%"
                             width="100%"
                             alt="dynamic image"
