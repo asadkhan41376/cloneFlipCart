@@ -2,7 +2,8 @@ import React from 'react'
 import Benner from './Benner'
 import ProductList from './ProductList'
 import ProductsItems from './ProductItem'
-import MensCloth from './MensCloth'
+
+import CategoryProduct from './CategoryProduct'
 
 const HomeSection = () => {
   return (
@@ -10,7 +11,7 @@ const HomeSection = () => {
       <ProductList/>
       <Benner/>
       <ProductsItems/>
-      <MensCloth/>
+      <CategoryProduct/>
     </div>
   )
 }
