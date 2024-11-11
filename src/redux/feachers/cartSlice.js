@@ -5,6 +5,7 @@ const getCartDataFromLocalStorage = () => {
  
    return existing;
   }
+  return existing;
 };
 const initialState = {
   items: getCartDataFromLocalStorage(),
