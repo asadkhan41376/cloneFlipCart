@@ -1,13 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./feachers/cartSlice";
-import profileReduser from "./feachers/profile";
+import profileRedcer from "./feachers/profile";
 
 
 
 export const store = configureStore({
     reducer:{
         cart:cartReducer,
-        Profile:profileReduser,
-
+        Profile:profileRedcer,
     },
 })
