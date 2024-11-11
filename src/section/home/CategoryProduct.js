@@ -98,7 +98,7 @@ const dispatch = useDispatch()
                                     <Typography>{categoryProduct.price}₹</Typography>
                                     <Button fullWidth
                                         variant="outlined" color="secondary"
-                                        onClick={() => handelAdd(e)}
+                                        onClick={() => handelAdd(categoryProduct)}
                                     >
                                         Add To Cart
                                     </Button>
