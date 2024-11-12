@@ -6,6 +6,9 @@ import { Box, Button, Card, CardContent, Container, FormControl, InputLabel, Men
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Link from 'next/link'
+
 
 const CategoryProduct = () => {
     const [mens, SetMens] = useState([])
@@ -84,7 +87,7 @@ const dispatch = useDispatch()
                                 sx={{ padding: " 30px" }}>
 
                                 <Box display="flex" justifyContent="center">
-                                    <MyImage
+                                  <Link href={`/product/${categoryProduct.id}`}  >  <MyImage
 
                                         src={categoryProduct.images[0]}
                                         height="120px"
@@ -92,11 +95,13 @@ const dispatch = useDispatch()
                                         alt="ha"
 
                                     />
+                                    </Link>
                                 </Box>
                                 <CardContent sx={{ textAlign: "center", }}>
                                     <Typography>{categoryProduct.title.split(" ")[0]}</Typography>
                                     <Typography>{categoryProduct.price}₹</Typography>
                                     <Button fullWidth
+                                   endIcon={<ShoppingCartIcon/>}
                                         variant="outlined" color="secondary"
                                         onClick={() => handelAdd(categoryProduct)}
                                     >

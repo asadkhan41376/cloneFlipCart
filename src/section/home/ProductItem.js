@@ -23,8 +23,9 @@ import {
   Typography,
 } from "@mui/material";
 import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
-import Grid2, { Grid } from "@mui/material/Grid2";
+import Grid from '@mui/material/Grid';
 import MyImage from "@/components/Image";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const ProductsItems = () => {
   const [data, setData] = useState([]);
@@ -64,7 +65,7 @@ const ProductsItems = () => {
 
   return (
     <Container maxWidth>
-      <Box bgcolor="white" my={2} px={5} py={3}>
+      <Box bgcolor="white" my={2} px={{lg:5,md:5,sm:3}} py={3}>
         <Link href="cart">
           <ToastContainer />
         </Link>
@@ -121,44 +122,41 @@ const ProductsItems = () => {
             </Swiper>
           </div>
         ) : (
-          <div className="flex-col justify-between align-middle">
+         
+             <Grid container spacing={2}  justifyContent="center">
             {data.map((e, index) => (
-              <div
-                key={index}
-                className="p-3 text-center   w-[100%] border-2 border-slate-300   divide-y divide-slate-700"
-              >
-                <Card>
-                  <Box display="flex" justifyContent="center">
-                    <MyImage
-                      src={e.image}
-                      height="120px"
-                      width="120px"
-                      alt="ha"
-                    />
-                  </Box>
-                  <CardContent
-                    sx={{
-                      textAlign: "center",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                    }}
-                  >
-                    <Typography>{e.title}...</Typography>
-                    <Typography>{e.price}₹</Typography>
-                    <Button
-                      fullWidth
-                      variant="outlined"
-                      color="secondary"
-                      onClick={() => handelAdd(e)}
-                    >
-                      add
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
+              <Grid item sm={6} > 
+ <Card>
+ <Box display="flex" justifyContent="center">
+   <MyImage
+     src={e.images[0]}
+     height="120px"
+     width="120px"
+     alt="ha"
+   />
+ </Box>
+ <CardContent
+   sx={{
+     textAlign: "center",
+   }}
+ >
+   <Typography>{e.title.split(" ")[0]}</Typography>
+   <Typography>{e.price}₹</Typography>
+   <Button
+     fullWidth
+     endIcon={<ShoppingCartIcon  />}
+     variant="outlined"
+     color="secondary"
+     onClick={() => handelAdd(e)}
+   >
+     Add To 
+   </Button>
+ </CardContent>
+</Card>
+            </Grid>
             ))}
-          </div>
+           </Grid>
+       
         )}
       </Box>
     </Container>
