@@ -15,7 +15,7 @@ const CategoryProduct = () => {
     const [mens, SetMens] = useState([])
     const [loading, setLoading] = useState(true);
     const [Category, SetCategory] = useState("fragrances")
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
 
     const MensData = async () => {
@@ -35,9 +35,9 @@ const dispatch = useDispatch()
 
     }
 
-   const handelAdd = (e)=>{
-    dispatch(addtocart(e))
-}
+    const handelAdd = (e) => {
+        dispatch(addtocart(e))
+    }
 
     useEffect(() => {
         MensData();
@@ -51,7 +51,7 @@ const dispatch = useDispatch()
 
 
 
-    
+
     return (
         <>
             <Container maxWidth >
@@ -78,7 +78,7 @@ const dispatch = useDispatch()
                 </Stack>
 
 
-                <Box bgcolor="white" my={2} px={5} py={3} display="flex" alignItems="center" justifyContent="space-around" flexWrap="wrap" gap={2}>
+                <Box bgcolor="white" my={2} px={{ lg: 5, md: 5, sm: 2 }} py={3} display="flex" alignItems="center" justifyContent="space-around" flexWrap="wrap" gap={2}>
                     {
                         mens.map((categoryProduct, index) => (
 
@@ -88,7 +88,7 @@ const dispatch = useDispatch()
                                 sx={{ padding: " 30px" }}>
 
                                 <Box display="flex" justifyContent="center">
-                                  <Link href={`/product/${categoryProduct.id}`}  >  <MyImage
+                                    <Link href={`/product/${categoryProduct.id}`}  >  <MyImage
 
                                         src={categoryProduct.images[0]}
                                         height="120px"
@@ -102,7 +102,7 @@ const dispatch = useDispatch()
                                     <Typography>{categoryProduct.title.split(" ")[0]}</Typography>
                                     <Typography>{categoryProduct.price}₹</Typography>
                                     <Button fullWidth
-                                   endIcon={<ShoppingCartIcon/>}
+                                        endIcon={<ShoppingCartIcon />}
                                         variant="outlined" color="secondary"
                                         onClick={() => handelAdd(categoryProduct)}
                                     >

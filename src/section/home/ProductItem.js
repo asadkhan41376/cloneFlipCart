@@ -1,7 +1,6 @@
 "use client";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -125,8 +124,8 @@ const ProductsItems = () => {
          
              <Grid container spacing={2}  justifyContent="center">
             {data.map((e, index) => (
-              <Grid item sm={6} > 
- <Card>
+              <Grid item sm={6} key={index}> 
+ <Card >
  <Box display="flex" justifyContent="center">
    <MyImage
      src={e.images[0]}

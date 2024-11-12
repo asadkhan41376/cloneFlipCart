@@ -6,9 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Banner = [
     {
-        bannerimg:"/Layout/benner/78e89d02375d5222.webp"
-    },{
-        bannerimg:"/Layout/benner/sale.webp"
+        bannerimg: "/Layout/benner/78e89d02375d5222.webp"
+    }, {
+        bannerimg: "/Layout/benner/sale.webp"
     }
 ]
 
@@ -16,13 +16,12 @@ const Benner = () => {
     return (
         <>
             <Swiper
-            loop
-   
+                loop
 
             >
 
                 {
-                   Banner.map((e, index) => (
+                    Banner.map((e, index) => (
                         <SwiperSlide key={index}>  <Image
 
                             width={1370}
