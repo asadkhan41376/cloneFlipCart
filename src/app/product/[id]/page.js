@@ -2,7 +2,7 @@ import AddTocart from "@/app/AddToCartLatout";
 
 
 const page = ({params }) => {
-  const {id}=params ;
+  const {id}=params;
  
   return (
     <>

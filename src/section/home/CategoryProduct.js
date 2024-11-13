@@ -13,7 +13,6 @@ import Link from 'next/link'
 
 const CategoryProduct = () => {
     const [mens, SetMens] = useState([])
-    const [loading, setLoading] = useState(true);
     const [Category, SetCategory] = useState("fragrances")
     const dispatch = useDispatch()
 
@@ -88,7 +87,7 @@ const CategoryProduct = () => {
                                 sx={{ padding: " 30px" }}>
 
                                 <Box display="flex" justifyContent="center">
-                                    <Link href={`/product/${categoryProduct.id}`}  >  <MyImage
+                                       <MyImage
 
                                         src={categoryProduct.images[0]}
                                         height="120px"
@@ -100,7 +99,7 @@ const CategoryProduct = () => {
                                         }}}
 
                                     />
-                                    </Link>
+                                 
                                 </Box>
                                 <CardContent sx={{ textAlign: "center", }}>
                                     <Typography>{categoryProduct.title.split(" ")[0]}</Typography>
