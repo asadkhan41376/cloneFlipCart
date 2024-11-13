@@ -16,7 +16,6 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia,
   Container,
   Stack,
   Typography,
@@ -28,18 +27,21 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const ProductsItems = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading]= useState(true)
 
   const matches = useMediaQuery("(min-width:768px)");
 
-  const getData = async () => {
-    const res = await fetch("https://dummyjson.com/products");
-    const data = await res.json();
-    console.log(data?.products,"dlkal");
-    
-
-    setData(data?.products);
-  };
+  
   useEffect(() => {
+    const getData = async () => {
+
+      const res = await fetch("https://dummyjson.com/products");
+      const data = await res.json();
+      console.log(data?.products,"dlkal");
+      setLoading(false)
+      setData(data?.products);
+    };
+
     getData();
   }, []);
 
@@ -62,6 +64,8 @@ const ProductsItems = () => {
       transition: Bounce,
     });
 
+
+  
   return (
     <Container maxWidth>
       <Box bgcolor="white" my={2} px={{lg:5,md:5,sm:3}} py={3}>
@@ -82,11 +86,13 @@ const ProductsItems = () => {
           </Link>
         </Stack>
 
-        {matches ? (
+        {matches && !loading ? (
+
           <div className="flex justify-between align-middle  ">
             <Swiper slidesPerView={5}>
              {
               data.map((e,index)=>(
+                
                 <SwiperSlide key={index}>
                 <Stack direction="row">
                   <Card variant="outlined" sx={{ padding: " 30px" }}>
@@ -94,12 +100,12 @@ const ProductsItems = () => {
                      <Link href={`/product/${e.id}`}>
                      
                      <MyImage
-                        src={e.images[0]}
+                        src={e.images[0] }
                         height="120px"
                         width="120px"
                         alt="ha"
-                        sx={{"&:hover": { 
-                          scale: "1.1", // Change background color on hover
+                        sx={{"&:hover":{ 
+                          scale: "1.1",
                           transition:"all .5s"
                       }}}
                       />
@@ -137,7 +143,7 @@ const ProductsItems = () => {
      width="120px"
      alt="ha"
      sx={{"&:hover": { 
-            scale: "1.1", // Change background color on hover
+            scale: "1.1", 
             transition:"all .5s"
         }}}
    /></Link>
