@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { removeItem, setItems } from "@/redux/feachers/cartSlice";
-import { useMediaQuery } from "usehooks-ts";
 import { Box, Button, Stack } from "@mui/material";
 import { Grid } from '@mui/system'
 import { loadDataToLocal } from "@/redux/feachers/cartSlice";
@@ -13,7 +12,6 @@ import { loadDataToLocal } from "@/redux/feachers/cartSlice";
 
 
 const ShoppingCart = () => {
-  const matches = useMediaQuery("(min-width:768px)");
   const dispatch = useDispatch();
   const handelRemove = (e) => {
     dispatch(removeItem(e));

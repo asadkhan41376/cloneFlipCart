@@ -61,4 +61,4 @@ const CartSection = () => {
   )
 }
 
-export default CartSection
+export default CartSection;

@@ -77,7 +77,7 @@ const Navbar = () => {
 
               <Stack flexDirection="row" alignItems="center">
               <Badge badgeContent={items.length} color="secondary">
-                    <Link><ShoppingCartIcon /></Link>
+                    <Link href="/cart"><ShoppingCartIcon /></Link>
                     </Badge>
                 <MobileDrowor />
               </Stack>

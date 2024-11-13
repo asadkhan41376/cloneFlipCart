@@ -7,7 +7,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Link from 'next/link'
+
 
 
 
@@ -25,7 +25,7 @@ const CategoryProduct = () => {
             const mensCategory = response?.data?.products.filter((product) => product?.category === Category)
             SetMens(mensCategory)
             console.log("ddfdsfsdfds", mens);
-            setLoading(false)
+  
         } catch (error) {
             console.log("mensData", error);
 

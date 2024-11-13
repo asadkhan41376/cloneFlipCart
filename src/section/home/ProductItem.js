@@ -69,7 +69,7 @@ const ProductsItems = () => {
   return (
     <Container maxWidth>
       <Box bgcolor="white" my={2} px={{lg:5,md:5,sm:3}} py={3}>
-        <Link href="cart">
+        <Link href="/cart">
           <ToastContainer />
         </Link>
         <Stack
