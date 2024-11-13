@@ -127,12 +127,12 @@ const ProductsItems = () => {
               <Grid item sm={6} key={index}> 
  <Card >
  <Box display="flex" justifyContent="center">
-   <MyImage
+ <Link href={`/product/${e.id}`}> <MyImage
      src={e.images[0]}
      height="120px"
      width="120px"
      alt="ha"
-   />
+   /></Link>
  </Box>
  <CardContent
    sx={{
