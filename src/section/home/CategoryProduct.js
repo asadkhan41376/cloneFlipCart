@@ -94,6 +94,10 @@ const CategoryProduct = () => {
                                         height="120px"
                                         width="120px"
                                         alt="ha"
+                                        sx={{"&:hover": { 
+                                            scale: "1.1", // Change background color on hover
+                                            transition:"all .5s"
+                                        }}}
 
                                     />
                                     </Link>
